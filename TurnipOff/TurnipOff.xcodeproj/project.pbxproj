@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33053DE72805C39800801674 /* TurnipOffApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053DE62805C39800801674 /* TurnipOffApp.swift */; };
+		33053DE92805C39800801674 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053DE82805C39800801674 /* ContentView.swift */; };
+		33053DEB2805C39900801674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33053DEA2805C39900801674 /* Assets.xcassets */; };
+		33053DEE2805C39900801674 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33053DED2805C39900801674 /* Preview Assets.xcassets */; };
+		33053DF82805C39A00801674 /* TurnipOffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053DF72805C39A00801674 /* TurnipOffTests.swift */; };
+		33053E022805C39A00801674 /* TurnipOffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E012805C39A00801674 /* TurnipOffUITests.swift */; };
+		33053E042805C39A00801674 /* TurnipOffUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E032805C39A00801674 /* TurnipOffUITestsLaunchTests.swift */; };
+		33053E122805C7AD00801674 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E112805C7AD00801674 /* MediaType.swift */; };
+		33053E142805C83500801674 /* MovieGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E132805C83500801674 /* MovieGenre.swift */; };
+		33053E162805C88000801674 /* TimeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E152805C88000801674 /* TimeWindow.swift */; };
+		33053E192805C8DB00801674 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E182805C8DB00801674 /* Movie.swift */; };
+		33053E1C2805C99300801674 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E1B2805C99300801674 /* Endpoint.swift */; };
+		33053E222805CBC200801674 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E212805CBC200801674 /* NetworkClient.swift */; };
+		33053E2A2805CE0600801674 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E292805CE0600801674 /* NetworkError.swift */; };
+		33053E2C2805CE2A00801674 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E2B2805CE2A00801674 /* Request.swift */; };
+		33053E2F2805CE8A00801674 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E2E2805CE8A00801674 /* Publisher.swift */; };
+		33053E312805D3C700801674 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E302805D3C700801674 /* TMDBService.swift */; };
+		33053E332805D43D00801674 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E322805D43D00801674 /* TMDBResponse.swift */; };
+		33053E352805D76600801674 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E342805D76600801674 /* TestViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33053DF42805C39A00801674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33053DDB2805C39800801674 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33053DE22805C39800801674;
+			remoteInfo = TurnipOff;
+		};
+		33053DFE2805C39A00801674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33053DDB2805C39800801674 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33053DE22805C39800801674;
+			remoteInfo = TurnipOff;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33053DE32805C39800801674 /* TurnipOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurnipOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33053DE62805C39800801674 /* TurnipOffApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipOffApp.swift; sourceTree = "<group>"; };
+		33053DE82805C39800801674 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		33053DEA2805C39900801674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33053DED2805C39900801674 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		33053DF32805C39A00801674 /* TurnipOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurnipOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33053DF72805C39A00801674 /* TurnipOffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipOffTests.swift; sourceTree = "<group>"; };
+		33053DFD2805C39A00801674 /* TurnipOffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurnipOffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33053E012805C39A00801674 /* TurnipOffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipOffUITests.swift; sourceTree = "<group>"; };
+		33053E032805C39A00801674 /* TurnipOffUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipOffUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		33053E112805C7AD00801674 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		33053E132805C83500801674 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
+		33053E152805C88000801674 /* TimeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWindow.swift; sourceTree = "<group>"; };
+		33053E182805C8DB00801674 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		33053E1B2805C99300801674 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		33053E212805CBC200801674 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		33053E292805CE0600801674 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		33053E2B2805CE2A00801674 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		33053E2E2805CE8A00801674 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		33053E302805D3C700801674 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
+		33053E322805D43D00801674 /* TMDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponse.swift; sourceTree = "<group>"; };
+		33053E342805D76600801674 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33053DE02805C39800801674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DF02805C39A00801674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DFA2805C39A00801674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33053DDA2805C39800801674 = {
+			isa = PBXGroup;
+			children = (
+				33053DE52805C39800801674 /* TurnipOff */,
+				33053DF62805C39A00801674 /* TurnipOffTests */,
+				33053E002805C39A00801674 /* TurnipOffUITests */,
+				33053DE42805C39800801674 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33053DE42805C39800801674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33053DE32805C39800801674 /* TurnipOff.app */,
+				33053DF32805C39A00801674 /* TurnipOffTests.xctest */,
+				33053DFD2805C39A00801674 /* TurnipOffUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33053DE52805C39800801674 /* TurnipOff */ = {
+			isa = PBXGroup;
+			children = (
+				33053E2D2805CE8400801674 /* Extension */,
+				33053E1A2805C97500801674 /* Network */,
+				33053E102805C79B00801674 /* Model */,
+				33053DE62805C39800801674 /* TurnipOffApp.swift */,
+				33053DE82805C39800801674 /* ContentView.swift */,
+				33053E342805D76600801674 /* TestViewModel.swift */,
+				33053DEA2805C39900801674 /* Assets.xcassets */,
+				33053DEC2805C39900801674 /* Preview Content */,
+			);
+			path = TurnipOff;
+			sourceTree = "<group>";
+		};
+		33053DEC2805C39900801674 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				33053DED2805C39900801674 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		33053DF62805C39A00801674 /* TurnipOffTests */ = {
+			isa = PBXGroup;
+			children = (
+				33053DF72805C39A00801674 /* TurnipOffTests.swift */,
+			);
+			path = TurnipOffTests;
+			sourceTree = "<group>";
+		};
+		33053E002805C39A00801674 /* TurnipOffUITests */ = {
+			isa = PBXGroup;
+			children = (
+				33053E012805C39A00801674 /* TurnipOffUITests.swift */,
+				33053E032805C39A00801674 /* TurnipOffUITestsLaunchTests.swift */,
+			);
+			path = TurnipOffUITests;
+			sourceTree = "<group>";
+		};
+		33053E102805C79B00801674 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33053E172805C8C200801674 /* Search */,
+				33053E112805C7AD00801674 /* MediaType.swift */,
+				33053E322805D43D00801674 /* TMDBResponse.swift */,
+				33053E132805C83500801674 /* MovieGenre.swift */,
+				33053E152805C88000801674 /* TimeWindow.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33053E172805C8C200801674 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				33053E182805C8DB00801674 /* Movie.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		33053E1A2805C97500801674 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				33053E1B2805C99300801674 /* Endpoint.swift */,
+				33053E292805CE0600801674 /* NetworkError.swift */,
+				33053E2B2805CE2A00801674 /* Request.swift */,
+				33053E212805CBC200801674 /* NetworkClient.swift */,
+				33053E302805D3C700801674 /* TMDBService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		33053E2D2805CE8400801674 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				33053E2E2805CE8A00801674 /* Publisher.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33053DE22805C39800801674 /* TurnipOff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33053E072805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOff" */;
+			buildPhases = (
+				33053DDF2805C39800801674 /* Sources */,
+				33053DE02805C39800801674 /* Frameworks */,
+				33053DE12805C39800801674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TurnipOff;
+			productName = TurnipOff;
+			productReference = 33053DE32805C39800801674 /* TurnipOff.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33053DF22805C39A00801674 /* TurnipOffTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33053E0A2805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOffTests" */;
+			buildPhases = (
+				33053DEF2805C39A00801674 /* Sources */,
+				33053DF02805C39A00801674 /* Frameworks */,
+				33053DF12805C39A00801674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33053DF52805C39A00801674 /* PBXTargetDependency */,
+			);
+			name = TurnipOffTests;
+			productName = TurnipOffTests;
+			productReference = 33053DF32805C39A00801674 /* TurnipOffTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		33053DFC2805C39A00801674 /* TurnipOffUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33053E0D2805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOffUITests" */;
+			buildPhases = (
+				33053DF92805C39A00801674 /* Sources */,
+				33053DFA2805C39A00801674 /* Frameworks */,
+				33053DFB2805C39A00801674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33053DFF2805C39A00801674 /* PBXTargetDependency */,
+			);
+			name = TurnipOffUITests;
+			productName = TurnipOffUITests;
+			productReference = 33053DFD2805C39A00801674 /* TurnipOffUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33053DDB2805C39800801674 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					33053DE22805C39800801674 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					33053DF22805C39A00801674 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 33053DE22805C39800801674;
+					};
+					33053DFC2805C39A00801674 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 33053DE22805C39800801674;
+					};
+				};
+			};
+			buildConfigurationList = 33053DDE2805C39800801674 /* Build configuration list for PBXProject "TurnipOff" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33053DDA2805C39800801674;
+			productRefGroup = 33053DE42805C39800801674 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33053DE22805C39800801674 /* TurnipOff */,
+				33053DF22805C39A00801674 /* TurnipOffTests */,
+				33053DFC2805C39A00801674 /* TurnipOffUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33053DE12805C39800801674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33053DEE2805C39900801674 /* Preview Assets.xcassets in Resources */,
+				33053DEB2805C39900801674 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DF12805C39A00801674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DFB2805C39A00801674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33053DDF2805C39800801674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33053E312805D3C700801674 /* TMDBService.swift in Sources */,
+				33053E1C2805C99300801674 /* Endpoint.swift in Sources */,
+				33053E142805C83500801674 /* MovieGenre.swift in Sources */,
+				33053E332805D43D00801674 /* TMDBResponse.swift in Sources */,
+				33053E122805C7AD00801674 /* MediaType.swift in Sources */,
+				33053E192805C8DB00801674 /* Movie.swift in Sources */,
+				33053DE92805C39800801674 /* ContentView.swift in Sources */,
+				33053E352805D76600801674 /* TestViewModel.swift in Sources */,
+				33053E222805CBC200801674 /* NetworkClient.swift in Sources */,
+				33053E162805C88000801674 /* TimeWindow.swift in Sources */,
+				33053DE72805C39800801674 /* TurnipOffApp.swift in Sources */,
+				33053E2F2805CE8A00801674 /* Publisher.swift in Sources */,
+				33053E2A2805CE0600801674 /* NetworkError.swift in Sources */,
+				33053E2C2805CE2A00801674 /* Request.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DEF2805C39A00801674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33053DF82805C39A00801674 /* TurnipOffTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33053DF92805C39A00801674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33053E042805C39A00801674 /* TurnipOffUITestsLaunchTests.swift in Sources */,
+				33053E022805C39A00801674 /* TurnipOffUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33053DF52805C39A00801674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33053DE22805C39800801674 /* TurnipOff */;
+			targetProxy = 33053DF42805C39A00801674 /* PBXContainerItemProxy */;
+		};
+		33053DFF2805C39A00801674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33053DE22805C39800801674 /* TurnipOff */;
+			targetProxy = 33053DFE2805C39A00801674 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		33053E052805C39A00801674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33053E062805C39A00801674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33053E082805C39A00801674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TurnipOff/Preview Content\"";
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33053E092805C39A00801674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TurnipOff/Preview Content\"";
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33053E0B2805C39A00801674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TurnipOff.app/TurnipOff";
+			};
+			name = Debug;
+		};
+		33053E0C2805C39A00801674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TurnipOff.app/TurnipOff";
+			};
+			name = Release;
+		};
+		33053E0E2805C39A00801674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOffUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TurnipOff;
+			};
+			name = Debug;
+		};
+		33053E0F2805C39A00801674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BTUBC86U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.TurnipOffUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TurnipOff;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33053DDE2805C39800801674 /* Build configuration list for PBXProject "TurnipOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33053E052805C39A00801674 /* Debug */,
+				33053E062805C39A00801674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33053E072805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33053E082805C39A00801674 /* Debug */,
+				33053E092805C39A00801674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33053E0A2805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOffTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33053E0B2805C39A00801674 /* Debug */,
+				33053E0C2805C39A00801674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33053E0D2805C39A00801674 /* Build configuration list for PBXNativeTarget "TurnipOffUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33053E0E2805C39A00801674 /* Debug */,
+				33053E0F2805C39A00801674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33053DDB2805C39800801674 /* Project object */;
+}
