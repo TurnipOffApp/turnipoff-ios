@@ -27,10 +27,13 @@ struct CarouselView: View {
         } else {
             TabView {
                 ForEach(Array(pages.enumerated()), id: \.offset) {
-                    $0.element.tag($0.offset)
+                    $0.element
+                        .tag($0.offset)
+                        .padding(.bottom, 50)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: indexDisplayMode))
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
     }
 

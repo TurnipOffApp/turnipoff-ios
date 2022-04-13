@@ -9,17 +9,15 @@ import SwiftUI
 
 struct TrendingView: View {
 
-    @ObservedObject private var viewModel = TrendingViewModel()
+    @StateObject private var viewModel = TrendingViewModel()
     
     var body: some View {
-        CarouselView(
-            pages: viewModel.movies.map { PosterView(movie: $0) },
+       CarouselView(
+            pages: viewModel.movies.map { TrendingMovieView(movie: $0) },
             indexDisplayMode: .always
         )
-        .frame(height: 200)
-        .onAppear {
-            viewModel.getTrendingList()
-        }
+        .frame(height: 500)
+        .onAppear(perform: viewModel.getTrendingList)
     }
 
 }
@@ -30,13 +28,13 @@ struct TrendingView_Previews: PreviewProvider {
     }
 }
 
-struct PosterView: View {
+struct TrendingMovieView: View {
 
     let movie: Movie
 
     var body: some View {
-        #warning("display image")
-        Text(movie.title)
+        let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
+        ImageURL(url: url, contentMode: .fit)
     }
 
 }

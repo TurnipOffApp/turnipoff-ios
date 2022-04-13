@@ -28,4 +28,11 @@ extension TMDBClient {
         provider.load(.discover)
     }
 
+    func trending(
+        type: MediaType,
+        time: TimeWindow
+    ) -> AnyPublisher<TMDBResponse<Movie>, Error> {
+        provider.load(.trending(media: type, time: time))
+    }
+
 }

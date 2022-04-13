@@ -11,6 +11,7 @@ import Combine
 enum TMDBService {
 
     case discover
+    case trending(media: MediaType, time: TimeWindow)
 }
 
 extension TMDBService: Service {
@@ -21,6 +22,8 @@ extension TMDBService: Service {
         switch self {
         case .discover:
             return "/discover/movie"
+        case let .trending(media, time):
+            return "/trending/\(media)/\(time)"
         }
     }
 
@@ -28,6 +31,9 @@ extension TMDBService: Service {
         let parameters: [URLQueryItem]
         switch self {
         case .discover:
+            #warning("update")
+            parameters = []
+        case .trending:
             parameters = []
         }
         return Self.defaultParams + parameters
@@ -35,14 +41,14 @@ extension TMDBService: Service {
 
     var method: ServiceMethod {
         switch self {
-        case .discover:
+        case .discover, .trending:
             return .get
         }
     }
 
     var contentType: ContentType {
         switch self {
-        case .discover:
+        case .discover, .trending:
             return .json
         }
     }

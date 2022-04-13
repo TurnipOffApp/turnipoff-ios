@@ -20,13 +20,10 @@ final class TrendingViewModel: ObservableObject {
     func getTrendingList() {
         let cancellable = TMDBClient
             .shared
-            .discover()
+            .trending(type: .movie, time: .week)
             .receive(on: RunLoop.main)
-            .sink { completion in
-                dump(completion)
-            } receiveValue: { value in
+            .sink { _ in } receiveValue: { value in
                 self.movies = value.results
-                dump(value)
             }
         cancellables.insert(cancellable)
     }
