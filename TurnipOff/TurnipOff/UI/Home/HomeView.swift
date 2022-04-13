@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  TurnipOff
 //
 //  Created by Gaël Foppolo on 12/04/2022.
@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
 
     @StateObject var viewModel = TestViewModel()
 
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(alignment: .leading) {
+            TrendingView()
+            Spacer()
+        }
+
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
