@@ -12,6 +12,7 @@ enum TMDBService {
 
     case discover
     case trending(media: MediaType, time: TimeWindow)
+    case movie(id: Int)
 }
 
 extension TMDBService: Service {
@@ -24,6 +25,8 @@ extension TMDBService: Service {
             return "/discover/movie"
         case let .trending(media, time):
             return "/trending/\(media)/\(time)"
+        case let .movie(id):
+            return "/movie/\(id)"
         }
     }
 
@@ -33,7 +36,7 @@ extension TMDBService: Service {
         case .discover:
             #warning("update")
             parameters = []
-        case .trending:
+        case .trending, .movie:
             parameters = []
         }
         return Self.defaultParams + parameters
@@ -41,14 +44,14 @@ extension TMDBService: Service {
 
     var method: ServiceMethod {
         switch self {
-        case .discover, .trending:
+        case .discover, .trending, .movie:
             return .get
         }
     }
 
     var contentType: ContentType {
         switch self {
-        case .discover, .trending:
+        case .discover, .trending, .movie:
             return .json
         }
     }
@@ -71,7 +74,7 @@ fileprivate extension TMDBService {
 
     static var dateFormatter: DateFormatter = {
         let aoDateFormatter = DateFormatter()
-        aoDateFormatter.dateFormat = "yyyy-dd-MM"
+        aoDateFormatter.dateFormat = "yyyy-MM-dd"
         return aoDateFormatter
     }()
 

@@ -30,11 +30,13 @@ struct TrendingView_Previews: PreviewProvider {
 
 struct TrendingMovieView: View {
 
-    let movie: Movie
+    let movie: MovieSearch
 
     var body: some View {
         let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
-        ImageURL(url: url, contentMode: .fit)
+        NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
+            ImageURL(url: url, contentMode: .fit)
+        }
     }
 
 }

@@ -24,15 +24,17 @@ final class TMDBClient {
 
 extension TMDBClient {
 
-    func discover() -> AnyPublisher<TMDBResponse<Movie>, Error> {
-        provider.load(.discover)
-    }
-
     func trending(
         type: MediaType,
         time: TimeWindow
-    ) -> AnyPublisher<TMDBResponse<Movie>, Error> {
+    ) -> AnyPublisher<TMDBResponse<MovieSearch>, Error> {
         provider.load(.trending(media: type, time: time))
+    }
+
+    func movie(
+        id: Int
+    ) -> AnyPublisher<Movie, Error> {
+        provider.load(.movie(id: id))
     }
 
 }

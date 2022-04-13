@@ -13,10 +13,5 @@ final class TestViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
 
     init() {
-        cancellable = TMDBClient.shared.discover().sink { completion in
-            dump(completion)
-        } receiveValue: { value in
-            dump(value)
-        }
     }
 }

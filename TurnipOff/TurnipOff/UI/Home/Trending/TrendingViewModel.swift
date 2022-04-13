@@ -11,7 +11,7 @@ import Combine
 final class TrendingViewModel: ObservableObject {
 
     var cancellables = Set<AnyCancellable>()
-    @Published var movies: [Movie]
+    @Published var movies: [MovieSearch]
 
     init() {
         movies = .init()
