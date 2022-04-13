@@ -23,6 +23,7 @@
 		33053E312805D3C700801674 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E302805D3C700801674 /* TMDBService.swift */; };
 		33053E332805D43D00801674 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E322805D43D00801674 /* TMDBResponse.swift */; };
 		33053E352805D76600801674 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053E342805D76600801674 /* TestViewModel.swift */; };
+		33114042280754DE004100B0 /* MovieOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33114041280754DE004100B0 /* MovieOverviewView.swift */; };
 		339DFDFC2806B27000B0DF92 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DFDFB2806B27000B0DF92 /* Service.swift */; };
 		339DFDFF2806B29C00B0DF92 /* ServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DFDFE2806B29C00B0DF92 /* ServiceMethod.swift */; };
 		339DFE022806B40C00B0DF92 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339DFE012806B40C00B0DF92 /* ServiceProvider.swift */; };
@@ -83,6 +84,7 @@
 		33053E302805D3C700801674 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
 		33053E322805D43D00801674 /* TMDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponse.swift; sourceTree = "<group>"; };
 		33053E342805D76600801674 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		33114041280754DE004100B0 /* MovieOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewView.swift; sourceTree = "<group>"; };
 		339DFDFB2806B27000B0DF92 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		339DFDFE2806B29C00B0DF92 /* ServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethod.swift; sourceTree = "<group>"; };
 		339DFE012806B40C00B0DF92 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				339DFE2B28070E2900B0DF92 /* MovieView.swift */,
 				339DFE2F28071BD900B0DF92 /* MovieHeaderView.swift */,
 				339DFE3128071C2500B0DF92 /* MovieDescriptionView.swift */,
+				33114041280754DE004100B0 /* MovieOverviewView.swift */,
 				339DFE2D28070E8400B0DF92 /* MovieViewModel.swift */,
 			);
 			path = Movie;
@@ -463,6 +466,7 @@
 				339DFE062806BCB100B0DF92 /* TMDBClient.swift in Sources */,
 				33053E312805D3C700801674 /* TMDBService.swift in Sources */,
 				339DFE132806C96B00B0DF92 /* TrendingView.swift in Sources */,
+				33114042280754DE004100B0 /* MovieOverviewView.swift in Sources */,
 				339DFE1E2806F76700B0DF92 /* ImageAsync.swift in Sources */,
 				339DFDFC2806B27000B0DF92 /* Service.swift in Sources */,
 				339DFE0D2806C00C00B0DF92 /* CachePolicyService.swift in Sources */,
@@ -578,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -633,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

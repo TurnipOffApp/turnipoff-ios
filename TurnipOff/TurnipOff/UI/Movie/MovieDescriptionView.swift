@@ -9,55 +9,64 @@ import SwiftUI
 
 struct MovieDescriptionView: View {
 
-    let movie: Movie
+    // MARK: Properties
 
-    #warning("make these static")
-    let dateFormatter: DateFormatter
-    let dateComponentsFormatter: DateComponentsFormatter
-
-    init(movie: Movie) {
-        self.movie = movie
+    static var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
-        self.dateFormatter = dateFormatter
+        return dateFormatter
+    }()
+    static var listFormatter: ListFormatter = {
+        let listFormatter = ListFormatter()
+        return listFormatter
+    }()
+    static var dateComponentsFormatter: DateComponentsFormatter = {
         let dateComponentsFormatter = DateComponentsFormatter()
         dateComponentsFormatter.unitsStyle = .brief
         dateComponentsFormatter.allowedUnits = [.hour, .minute]
         dateComponentsFormatter.zeroFormattingBehavior = [.pad]
-        self.dateComponentsFormatter = dateComponentsFormatter
-    }
+        return dateComponentsFormatter
+    }()
+
+    let movie: Movie
+
+    // MARK: View
 
     var body: some View {
         HStack {
             Text(String(movie.note))
-              .padding()
-              .background(
-                Circle()
-                    .stroke(.gray, lineWidth: 2)
-                    .padding(6)
-              )
-              .frame(width: 60, height: 60)
+                .padding()
+                .background(
+                    Circle()
+                        .stroke(.gray, lineWidth: 2)
+                        .padding(6)
+                )
+                .frame(width: 60, height: 60)
 
             Spacer()
 
-            #warning("clean this part")
             VStack(alignment: .trailing) {
                 Text(movie.title)
                     .font(.title2)
-                Text(movie.genres.map(\.name).joined(separator: ","))
+                Text(movie.genres.map(\.name), format: .list(type: .and))
                     .font(.subheadline)
                 HStack {
-                    Text(movie.release, formatter: dateFormatter)
-                    let measurement: Measurement<UnitDuration> = .init(value: Double(movie.runtime), unit: .minutes)
+                    Text(movie.release, formatter: Self.dateFormatter)
+                        .font(.subheadline)
+                    let measurement: Measurement<UnitDuration> = .init(
+                        value: Double(movie.runtime),
+                        unit: .minutes
+                    )
                     let seconds = measurement.converted(to: .seconds).value
-                    if let formatted = dateComponentsFormatter.string(from: seconds) {
+                    let formatted = Self.dateComponentsFormatter.string(from: seconds)
+                    if let formatted = formatted {
                         Text(formatted)
                     }
                 }
             }
 
         }
-        .padding()
+        .padding([.leading, .trailing])
     }
 
 }

@@ -19,6 +19,7 @@ struct Movie: Identifiable {
     let genres: [Genre]
     let release: Date
     let runtime: Int
+    let overview: String
 
 }
 
@@ -35,6 +36,7 @@ extension Movie: Codable {
         case note = "vote_average"
         case release = "release_date"
         case runtime = "runtime"
+        case overview = "overview"
     }
 
 }

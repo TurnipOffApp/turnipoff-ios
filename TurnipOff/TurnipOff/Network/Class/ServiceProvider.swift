@@ -47,7 +47,6 @@ extension ServiceProvider {
             }
             .decode(type: Value.self, decoder: service.decoder)
             .mapError { NetworkError.handleError($0) }
-            .print()
             .eraseToAnyPublisher()
     }
 

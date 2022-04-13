@@ -12,15 +12,19 @@ struct MovieView: View {
     @StateObject var viewModel: MovieViewModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            if let movie = viewModel.movie {
-                MovieHeaderView(movie: movie)
-                    .frame(height: 220)
-                Divider()
-                MovieDescriptionView(movie: movie)
+        ScrollView {
+            VStack(alignment: .leading) {
+                if let movie = viewModel.movie {
+                    MovieHeaderView(movie: movie)
+                        .frame(height: 220)
+                    Divider()
+                    MovieDescriptionView(movie: movie)
+                    Divider()
+                    MovieOverviewView(movie: movie)
+                }
             }
-            Spacer()
         }
+        .navigationTitle("Movie details")
         .onAppear(perform: viewModel.refreshMovie)
     }
 }
