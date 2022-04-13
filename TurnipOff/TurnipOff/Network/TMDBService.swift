@@ -8,17 +8,78 @@
 import Foundation
 import Combine
 
-final class TMDBService {
+enum TMDBService {
 
-    static func discover() -> AnyPublisher<TMDBResponse<Movie>, Error> {
-        let endpoint = Endpoint(path: "/discover/movie", queryParameters: [])
-        let request = Request(
-            endpoint: endpoint,
-            method: .get,
-            contentType: .json
-        )
-        return NetworkClient.shared.performRequest(request)
+    case discover
+}
+
+extension TMDBService: Service {
+
+    var baseURL: String { "https://api.themoviedb.org/3" }
+
+    var path: String {
+        switch self {
+        case .discover:
+            return "/discover/movie"
+        }
     }
 
+    var parameters: [URLQueryItem] {
+        let parameters: [URLQueryItem]
+        switch self {
+        case .discover:
+            parameters = []
+        }
+        return Self.defaultParams + parameters
+    }
+
+    var method: ServiceMethod {
+        switch self {
+        case .discover:
+            return .get
+        }
+    }
+
+    var contentType: ContentType {
+        switch self {
+        case .discover:
+            return .json
+        }
+    }
+
+    var decoder: JSONDecoder { Self.decoder }
+
+}
+
+extension TMDBService: CachePolicyService {
+
+    var cachePolicy: URLRequest.CachePolicy? {
+        .reloadIgnoringLocalCacheData
+    }
+
+}
+
+fileprivate extension TMDBService {
+
+    static let API_KEY = "7aeaa9d72de6df534afb8b71ac7d82eb"
+
+    static var dateFormatter: DateFormatter = {
+        let aoDateFormatter = DateFormatter()
+        aoDateFormatter.dateFormat = "yyyy-dd-MM"
+        return aoDateFormatter
+    }()
+
+    static var decoder: JSONDecoder {
+        let aoJSONDecoder = JSONDecoder()
+        aoJSONDecoder.dateDecodingStrategy = .formatted(dateFormatter)
+        return aoJSONDecoder
+    }
+
+    static let defaultParams: [URLQueryItem] = [
+        .init(name: "api_key", value: Self.API_KEY),
+        .init(name: "language", value: Locale.autoupdatingCurrent.languageCode),
+        .init(name: "region", value: Locale.autoupdatingCurrent.regionCode),
+        .init(name: "adult", value: "false")
+    ]
 
 }
