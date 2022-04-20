@@ -19,12 +19,10 @@ struct MovieHeaderView: View {
             )
             .blur(radius: 5)
 
-            ImageURL(
+            ImageURLRounded(
                 url: PictureSizes.poster(.w500).builURL(for: movie.posterPath),
                 contentMode: .fit
             )
-            .cornerRadius(10)
-            .shadow(radius: 5)
             .padding()
 
         }

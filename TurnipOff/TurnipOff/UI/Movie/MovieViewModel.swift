@@ -10,7 +10,7 @@ import Combine
 
 final class MovieViewModel: ObservableObject {
 
-    private var cancellables = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
     private let id: Int
     @Published private(set) var movie: Movie?
     @Published private(set) var credits: Credits?
@@ -29,28 +29,24 @@ final class MovieViewModel: ObservableObject {
 private extension MovieViewModel {
 
     func refreshMovie() {
-        let cancellable = TMDBClient
+        TMDBClient
             .shared
             .movie(id: id)
             .receive(on: RunLoop.main)
-            .sink { completion in
-                dump(completion)
-            } receiveValue: { value in
-                self.movie = value
+            .sink { _ in } receiveValue: { movie in
+                self.movie = movie
             }
-        cancellables.insert(cancellable)
+            .store(in: &subscriptions)
     }
 
     func refreshCredits() {
-        let cancellable = TMDBClient
+        TMDBClient
             .shared
             .credits(forMovie: id)
             .receive(on: RunLoop.main)
-            .sink { completion in
-                dump(completion)
-            } receiveValue: { value in
-                self.credits = value
+            .sink { _ in } receiveValue: { credits in
+                self.credits = credits
             }
-        cancellables.insert(cancellable)
+            .store(in: &subscriptions)
     }
 }

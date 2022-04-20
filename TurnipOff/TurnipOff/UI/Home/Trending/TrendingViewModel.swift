@@ -10,21 +10,28 @@ import Combine
 
 final class TrendingViewModel: ObservableObject {
 
-    var cancellables = Set<AnyCancellable>()
-    @Published var movies: [MovieSearch]
+    private var subscriptions = Set<AnyCancellable>()
+    @Published private(set) var movies: [MovieSearch]
 
     init() {
         movies = .init()
     }
 
     func getTrendingList() {
-        let cancellable = TMDBClient
+        TMDBClient
             .shared
-            .trending(type: .movie, time: .week)
+            .discover(
+                page: 1,
+                sort: .ascending,
+                genres: [],
+                period: nil
+            )
             .receive(on: RunLoop.main)
-            .sink { _ in } receiveValue: { value in
-                self.movies = value.results
+            .map { $0.results }
+            .catch { _ in Just(self.movies) }
+            .sink { movies in
+                self.movies = Array(movies.prefix(6))
             }
-        cancellables.insert(cancellable)
+            .store(in: &subscriptions)
     }
 }

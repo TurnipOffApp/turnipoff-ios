@@ -17,13 +17,10 @@ struct PeopleView: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            let url = PictureSizes.poster(.w185).builURL(for: people.profilePath)
-            ImageURL(
+            ImageURLRounded(
                 url: PictureSizes.poster(.w185).builURL(for: people.profilePath),
                 contentMode: .fill
             )
-            .cornerRadius(10)
-            .shadow(radius: 5)
             .padding()
             .frame(width: 80, height: 100)
 

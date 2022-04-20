@@ -10,8 +10,7 @@ import Combine
 
 enum TMDBService {
 
-    case discover
-    case trending(media: MediaType, time: TimeWindow)
+    case discover(page: Int, sort: Sort = .ascending, genres: [MovieGenre], period: ClosedRange<Date>?)
     case movie(id: Int)
     case movieCredits(id: Int)
 }
@@ -24,8 +23,6 @@ extension TMDBService: Service {
         switch self {
         case .discover:
             return "/discover/movie"
-        case let .trending(media, time):
-            return "/trending/\(media)/\(time)"
         case let .movie(id):
             return "/movie/\(id)"
         case let .movieCredits(id):
@@ -36,25 +33,31 @@ extension TMDBService: Service {
     var parameters: [URLQueryItem] {
         let parameters: [URLQueryItem]
         switch self {
-        case .discover:
-            #warning("update")
-            parameters = []
-        case .trending, .movie, .movieCredits:
+        case let .discover(page, sort, genres, period):
+            parameters = [
+                .init(name: "page", value: String(page)),
+                .init(name: "vote_count.gte", value: "25"),
+                .init(name: "sort_by", value: ["vote_average", sort.rawValue].joined(separator: ".")),
+                .init(name: "with_genres", value: genres.map(\.rawValue).joined(separator: ",")),
+                .init(name: "release_date.gte", value: period.map { Self.dateFormatter.string(from: $0.lowerBound) }),
+                .init(name: "release_date.lte", value: period.map { Self.dateFormatter.string(from: $0.upperBound) })
+            ]
+        case .movie, .movieCredits:
             parameters = []
         }
-        return Self.defaultParams + parameters
+        return Self.defaultParams + parameters.filter { $0.value != nil }
     }
 
     var method: ServiceMethod {
         switch self {
-        case .discover, .trending, .movie, .movieCredits:
+        case .discover, .movie, .movieCredits:
             return .get
         }
     }
 
     var contentType: ContentType {
         switch self {
-        case .discover, .trending, .movie, .movieCredits:
+        case .discover, .movie, .movieCredits:
             return .json
         }
     }

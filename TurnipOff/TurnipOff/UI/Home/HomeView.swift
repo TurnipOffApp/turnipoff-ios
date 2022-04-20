@@ -9,14 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @StateObject var viewModel = TestViewModel()
-
     var body: some View {
-        VStack(alignment: .leading) {
-            TrendingView()
-            Spacer()
+        GeometryReader { geometry in
+            ScrollView(.vertical) {
+                VStack {
+                    TrendingView()
+                        .frame(height: geometry.size.height * 0.5)
+                    ForEach(SectionConfig.Category.allCases) { section in
+                        Divider()
+                        let config = SectionConfig.builder(category: section)
+                        SectionView(viewModel: .init(config: config))
+                            .frame(height: geometry.size.height * 0.35)
+                    }
+                    Spacer()
+                }
+            }
         }
-
     }
 }
 

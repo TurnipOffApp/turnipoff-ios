@@ -12,14 +12,12 @@ struct TrendingView: View {
     @StateObject private var viewModel = TrendingViewModel()
     
     var body: some View {
-       CarouselView(
+        CarouselView(
             pages: viewModel.movies.map { TrendingMovieView(movie: $0) },
             indexDisplayMode: .always
         )
-        .frame(height: 500)
         .onAppear(perform: viewModel.getTrendingList)
     }
-
 }
 
 struct TrendingView_Previews: PreviewProvider {
@@ -35,7 +33,7 @@ struct TrendingMovieView: View {
     var body: some View {
         let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
         NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
-            ImageURL(url: url, contentMode: .fit)
+            ImageURLRounded(url: url, contentMode: .fit)
         }
     }
 

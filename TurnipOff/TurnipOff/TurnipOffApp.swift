@@ -13,6 +13,8 @@ struct TurnipOffApp: App {
         WindowGroup {
             NavigationView {
                 HomeView()
+                    .navigationTitle("TurnipOff")
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }
