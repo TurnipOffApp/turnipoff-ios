@@ -37,4 +37,10 @@ extension TMDBClient {
         provider.load(.movie(id: id))
     }
 
+    func credits(
+        forMovie id: Int
+    ) -> AnyPublisher<Credits, Error> {
+        provider.load(.movieCredits(id: id))
+    }
+
 }

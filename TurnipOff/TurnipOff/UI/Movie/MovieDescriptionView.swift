@@ -48,20 +48,20 @@ struct MovieDescriptionView: View {
             VStack(alignment: .trailing) {
                 Text(movie.title)
                     .font(.title2)
-                Text(movie.genres.map(\.name), format: .list(type: .and))
-                    .font(.subheadline)
                 HStack {
+                    Text(movie.genres.map(\.name), format: .list(type: .and))
                     Text(movie.release, formatter: Self.dateFormatter)
-                        .font(.subheadline)
-                    let measurement: Measurement<UnitDuration> = .init(
-                        value: Double(movie.runtime),
-                        unit: .minutes
-                    )
-                    let seconds = measurement.converted(to: .seconds).value
-                    let formatted = Self.dateComponentsFormatter.string(from: seconds)
-                    if let formatted = formatted {
-                        Text(formatted)
-                    }
+                }
+                .font(.subheadline)
+
+                let measurement: Measurement<UnitDuration> = .init(
+                    value: Double(movie.runtime),
+                    unit: .minutes
+                )
+                let seconds = measurement.converted(to: .seconds).value
+                let formatted = Self.dateComponentsFormatter.string(from: seconds)
+                if let formatted = formatted {
+                    Text(formatted)
                 }
             }
 
@@ -70,4 +70,3 @@ struct MovieDescriptionView: View {
     }
 
 }
-

@@ -13,6 +13,7 @@ enum TMDBService {
     case discover
     case trending(media: MediaType, time: TimeWindow)
     case movie(id: Int)
+    case movieCredits(id: Int)
 }
 
 extension TMDBService: Service {
@@ -27,6 +28,8 @@ extension TMDBService: Service {
             return "/trending/\(media)/\(time)"
         case let .movie(id):
             return "/movie/\(id)"
+        case let .movieCredits(id):
+            return "/movie/\(id)/credits"
         }
     }
 
@@ -36,7 +39,7 @@ extension TMDBService: Service {
         case .discover:
             #warning("update")
             parameters = []
-        case .trending, .movie:
+        case .trending, .movie, .movieCredits:
             parameters = []
         }
         return Self.defaultParams + parameters
@@ -44,14 +47,14 @@ extension TMDBService: Service {
 
     var method: ServiceMethod {
         switch self {
-        case .discover, .trending, .movie:
+        case .discover, .trending, .movie, .movieCredits:
             return .get
         }
     }
 
     var contentType: ContentType {
         switch self {
-        case .discover, .trending, .movie:
+        case .discover, .trending, .movie, .movieCredits:
             return .json
         }
     }

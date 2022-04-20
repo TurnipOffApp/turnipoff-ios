@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct Movie: Identifiable {
 
     let id: Int

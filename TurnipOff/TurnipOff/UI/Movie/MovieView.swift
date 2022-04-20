@@ -22,9 +22,13 @@ struct MovieView: View {
                     Divider()
                     MovieOverviewView(movie: movie)
                 }
+                if let credits = viewModel.credits {
+                    Divider()
+                    MovieCreditsView(credits: credits)
+                }
             }
         }
         .navigationTitle("Movie details")
-        .onAppear(perform: viewModel.refreshMovie)
+        .onAppear(perform: viewModel.refreshData)
     }
 }

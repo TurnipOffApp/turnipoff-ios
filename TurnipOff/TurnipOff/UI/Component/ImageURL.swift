@@ -23,18 +23,25 @@ struct ImageURL: View {
             url: url,
             transaction: .init(animation: .linear),
             content: { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: contentMode)
-                case .failure:
-                    Text("Error")
-                case .empty:
-                    Text("No image")
-                }
+                self.image(from: phase)
+                    .resizable()
+                    .aspectRatio(contentMode: contentMode)
             }
         )
     }
 
+}
+
+private extension ImageURL {
+
+    func image(from phase: ImageAsyncPhase) -> Image {
+        let imagee: Image
+        switch phase {
+        case .success(let image):
+            imagee = image
+        case .failure, .empty:
+            imagee = Image("missing_picture")
+        }
+        return imagee
+    }
 }
