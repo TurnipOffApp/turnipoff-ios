@@ -36,7 +36,7 @@ extension Movie.Credits.Crew: Codable {
 
 extension Movie.Credits.Crew: Credit {
 
-    var role: String { job }
+    var role: String? { job }
 
     var type: CreditType { .person }
 }

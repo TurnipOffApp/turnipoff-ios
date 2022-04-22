@@ -35,13 +35,13 @@ struct MovieDescriptionView: View {
     var body: some View {
         HStack {
             Text(String(movie.note))
-                .padding()
+                .padding(15)
                 .background(
                     Circle()
                         .stroke(.gray, lineWidth: 2)
                         .padding(6)
                 )
-                .frame(width: 60, height: 60)
+                .font(.title2)
 
             Spacer()
 
@@ -64,6 +64,10 @@ struct MovieDescriptionView: View {
                     Text(formatted)
                 }
             }
+            .multilineTextAlignment(.trailing)
+            .lineLimit(1)
+            .scaledToFit()
+            .minimumScaleFactor(0.5)
 
         }
         .padding([.leading, .trailing])

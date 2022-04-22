@@ -18,21 +18,17 @@ struct CreditView: View {
     var body: some View {
         VStack(alignment: .center) {
             NavigationLink(destination: self.destination) {
-                ImageURLRounded(
-                    url: PictureSizes.poster(.w342).builURL(for: credit.imagePath),
-                    contentMode: .fit
+                MoviePosterImage(
+                    PictureSizes.poster(.w342).builURL(for: credit.imagePath)
                 )
             }
-            .frame(width: 80, height: 100)
-            .clipped()
 
             Text(credit.title)
                 .font(.subheadline)
-            Text(credit.role)
+            Text(credit.role ?? "No data")
                 .font(.caption)
             Spacer()
         }
-        .frame(width: 120)
     }
 
     @ViewBuilder

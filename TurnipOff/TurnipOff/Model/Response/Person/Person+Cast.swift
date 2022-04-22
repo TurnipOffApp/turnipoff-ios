@@ -14,7 +14,7 @@ extension Person.Credits {
         let id: Int
         let internalID = UUID()
         let title: String
-        let character: String
+        let character: String?
         let imagePath: String?
         let average: Float
 
@@ -38,7 +38,7 @@ extension Person.Credits.Cast: Codable {
 
 extension Person.Credits.Cast: Credit {
 
-    var role: String { character }
+    var role: String? { character }
 
     var type: CreditType { .movie }
 

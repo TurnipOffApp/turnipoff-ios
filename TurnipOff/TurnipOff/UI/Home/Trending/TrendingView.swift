@@ -29,7 +29,7 @@ struct TrendingMovieView: View {
             VStack {
                 let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
                 NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
-                    ImageURLRounded(url: url, contentMode: .fit)
+                    MoviePosterImage(url)
                         .frame(width: geometry.size.width * 0.5)
                         .clipped()
                 }

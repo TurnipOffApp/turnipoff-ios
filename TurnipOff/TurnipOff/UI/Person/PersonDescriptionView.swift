@@ -26,13 +26,13 @@ struct PersonDescriptionView: View {
     var body: some View {
         HStack {
             Text(String(format: "%.1f", average))
-                .padding()
+                .padding(15)
                 .background(
                     Circle()
                         .stroke(.gray, lineWidth: 2)
                         .padding(6)
                 )
-                .frame(width: 60, height: 60)
+                .font(.title)
 
             Spacer()
 
@@ -49,6 +49,10 @@ struct PersonDescriptionView: View {
                 }
                 .font(.subheadline)
             }
+            .multilineTextAlignment(.trailing)
+            .lineLimit(1)
+            .scaledToFit()
+            .minimumScaleFactor(0.5)
 
         }
         .padding([.leading, .trailing])

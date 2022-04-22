@@ -15,14 +15,14 @@ struct SectionView: View {
         VStack {
             let title = ["Worst", viewModel.config.category.title, "movies"].joined(separator: " ")
             Text(title)
+                .font(.title2)
             ScrollView(.horizontal) {
                 LazyHStack {
                     ForEach(viewModel.movies) { movie in
                         let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
                         NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
-                            ImageURLRounded(url: url, contentMode: .fit)
-                                .frame(width: 120, height: 150)
-                                .clipped()
+                            MoviePosterImage(url)
+                                .padding()
                                 .onAppear {
                                     viewModel.loadMoreMoviesIfNeeded(currentMovie: movie)
                                 }

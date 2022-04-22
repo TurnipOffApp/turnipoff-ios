@@ -14,7 +14,7 @@ extension Movie.Credits {
         let id: Int
         let internalID = UUID()
         let title: String
-        let character: String
+        let character: String?
         let imagePath: String?
 
     }
@@ -36,7 +36,7 @@ extension Movie.Credits.Cast: Codable {
 
 extension Movie.Credits.Cast: Credit {
 
-    var role: String { character }
+    var role: String? { character }
 
     var type: CreditType { .person }
 

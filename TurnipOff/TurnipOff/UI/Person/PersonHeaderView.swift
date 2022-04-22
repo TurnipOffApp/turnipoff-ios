@@ -14,9 +14,8 @@ struct PersonHeaderView: View {
     var body: some View {
         HStack() {
             Spacer()
-            ImageURLRounded(
-                url: PictureSizes.poster(.w185).builURL(for: person.profilePath),
-                contentMode: .fit
+            MoviePosterImage(
+                PictureSizes.poster(.w185).builURL(for: person.profilePath)
             )
             Spacer()
         }

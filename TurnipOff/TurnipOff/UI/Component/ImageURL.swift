@@ -12,10 +12,12 @@ struct ImageURL: View {
 
     let url: URL?
     let contentMode: ContentMode
+    let ratio: CGFloat?
 
-    init(url: URL?, contentMode: ContentMode = .fill) {
+    init(url: URL?, contentMode: ContentMode = .fill, ratio: CGFloat? = nil) {
         self.url = url
         self.contentMode = contentMode
+        self.ratio = ratio
     }
 
     var body: some View {
@@ -25,7 +27,7 @@ struct ImageURL: View {
             content: { phase in
                 self.image(from: phase)
                     .resizable()
-                    .aspectRatio(contentMode: contentMode)
+                    .aspectRatio(ratio, contentMode: contentMode)
             }
         )
     }

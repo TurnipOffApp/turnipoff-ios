@@ -17,7 +17,7 @@ protocol Credit: Codable {
     var id: Int { get }
     var internalID: UUID { get }
     var title: String { get }
-    var role: String { get }
+    var role: String? { get }
     var imagePath: String? { get }
 
     var type: CreditType { get }
