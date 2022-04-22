@@ -48,7 +48,7 @@ struct MovieDescriptionView: View {
             VStack(alignment: .trailing) {
                 Text(movie.title)
                     .font(.title2)
-                HStack {
+                Group {
                     Text(movie.genres.map(\.name), format: .list(type: .and))
                     Text(movie.release, formatter: Self.dateFormatter)
                 }

@@ -32,7 +32,7 @@ extension TMDBClient {
 
     func credits(
         forMovie id: Int
-    ) -> AnyPublisher<Credits, Error> {
+    ) -> AnyPublisher<Movie.Credits, Error> {
         provider.load(.movieCredits(id: id))
     }
 
@@ -43,6 +43,18 @@ extension TMDBClient {
         period: ClosedRange<Date>? = nil
     ) -> AnyPublisher<TMDBResponse<MovieSearch>, Error> {
         provider.load(.discover(page: page, sort: sort, genres: genres, period: period))
+    }
+
+    func people(
+        id: Int
+    ) -> AnyPublisher<Person, Error> {
+        provider.load(.people(id: id))
+    }
+
+    func credits(
+        forPeople id: Int
+    ) -> AnyPublisher<Person.Credits, Error> {
+        provider.load(.peopleCredits(id: id))
     }
 
 }

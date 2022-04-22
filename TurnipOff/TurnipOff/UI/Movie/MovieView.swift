@@ -24,7 +24,7 @@ struct MovieView: View {
                 }
                 if let credits = viewModel.credits {
                     Divider()
-                    MovieCreditsView(credits: credits)
+                    CreditsView(credits: credits)
                 }
             }
         }

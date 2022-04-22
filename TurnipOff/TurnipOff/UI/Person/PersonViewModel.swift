@@ -1,40 +1,40 @@
 //
-//  MovieViewModel.swift
+//  PeopleViewModel.swift
 //  TurnipOff
 //
-//  Created by Gaël Foppolo on 13/04/2022.
+//  Created by Gaël Foppolo on 22/04/2022.
 //
 
 import Foundation
 import Combine
 
-final class MovieViewModel: ObservableObject {
+final class PersonViewModel: ObservableObject {
 
     private var subscriptions = Set<AnyCancellable>()
     private let id: Int
-    @Published private(set) var movie: Movie?
-    @Published private(set) var credits: Movie.Credits?
+    @Published private(set) var person: Person?
+    @Published private(set) var credits: Person.Credits?
 
     init(id: Int) {
         self.id = id
     }
 
     func refreshData() {
-        refreshMovie()
+        refreshPerson()
         refreshCredits()
     }
 
 }
 
-private extension MovieViewModel {
+private extension PersonViewModel {
 
-    func refreshMovie() {
+    func refreshPerson() {
         TMDBClient
             .shared
-            .movie(id: id)
+            .people(id: id)
             .receive(on: RunLoop.main)
-            .sink { _ in } receiveValue: { movie in
-                self.movie = movie
+            .sink { _ in } receiveValue: { person in
+                self.person = person
             }
             .store(in: &subscriptions)
     }
@@ -42,11 +42,12 @@ private extension MovieViewModel {
     func refreshCredits() {
         TMDBClient
             .shared
-            .credits(forMovie: id)
+            .credits(forPeople: id)
             .receive(on: RunLoop.main)
             .sink { _ in } receiveValue: { credits in
                 self.credits = credits
             }
             .store(in: &subscriptions)
     }
+
 }

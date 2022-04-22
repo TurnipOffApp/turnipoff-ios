@@ -13,6 +13,8 @@ enum TMDBService {
     case discover(page: Int, sort: Sort = .ascending, genres: [MovieGenre], period: ClosedRange<Date>?)
     case movie(id: Int)
     case movieCredits(id: Int)
+    case people(id: Int)
+    case peopleCredits(id: Int)
 }
 
 extension TMDBService: Service {
@@ -27,6 +29,10 @@ extension TMDBService: Service {
             return "/movie/\(id)"
         case let .movieCredits(id):
             return "/movie/\(id)/credits"
+        case let .people(id):
+            return "/person/\(id)"
+        case let .peopleCredits(id):
+            return "/person/\(id)/movie_credits"
         }
     }
 
@@ -42,7 +48,7 @@ extension TMDBService: Service {
                 .init(name: "release_date.gte", value: period.map { Self.dateFormatter.string(from: $0.lowerBound) }),
                 .init(name: "release_date.lte", value: period.map { Self.dateFormatter.string(from: $0.upperBound) })
             ]
-        case .movie, .movieCredits:
+        case .movie, .movieCredits, .people, .peopleCredits:
             parameters = []
         }
         return Self.defaultParams + parameters.filter { $0.value != nil }
@@ -50,14 +56,14 @@ extension TMDBService: Service {
 
     var method: ServiceMethod {
         switch self {
-        case .discover, .movie, .movieCredits:
+        case .discover, .movie, .movieCredits, .people, .peopleCredits:
             return .get
         }
     }
 
     var contentType: ContentType {
         switch self {
-        case .discover, .movie, .movieCredits:
+        case .discover, .movie, .movieCredits, .people, .peopleCredits:
             return .json
         }
     }

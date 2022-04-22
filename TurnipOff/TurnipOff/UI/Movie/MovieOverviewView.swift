@@ -16,7 +16,13 @@ struct MovieOverviewView: View {
     // MARK: View
 
     var body: some View {
-        Text(movie.overview)
+        Group {
+            if movie.overview.isEmpty {
+                Text("No overview.")
+            } else {
+                Text(movie.overview)
+            }
+        }
             .padding()
     }
 
