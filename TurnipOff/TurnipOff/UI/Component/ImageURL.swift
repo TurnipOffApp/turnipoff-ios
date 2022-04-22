@@ -21,7 +21,7 @@ struct ImageURL: View {
     var body: some View {
         ImageAsync(
             url: url,
-            transaction: .init(animation: .linear),
+            transaction: .init(animation: .none),
             content: { phase in
                 self.image(from: phase)
                     .resizable()

@@ -21,7 +21,8 @@ struct SectionView: View {
                         let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
                         NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
                             ImageURLRounded(url: url, contentMode: .fit)
-                                .padding()
+                                .frame(width: 120, height: 150)
+                                .clipped()
                                 .onAppear {
                                     viewModel.loadMoreMoviesIfNeeded(currentMovie: movie)
                                 }

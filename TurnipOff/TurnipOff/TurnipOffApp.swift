@@ -16,6 +16,7 @@ struct TurnipOffApp: App {
                     .navigationTitle("TurnipOff")
                     .navigationBarTitleDisplayMode(.inline)
             }
+            .navigationViewStyle(.stack)
         }
     }
 }

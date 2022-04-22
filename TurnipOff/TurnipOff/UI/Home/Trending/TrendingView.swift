@@ -20,20 +20,21 @@ struct TrendingView: View {
     }
 }
 
-struct TrendingView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrendingView()
-    }
-}
-
 struct TrendingMovieView: View {
 
     let movie: MovieSearch
 
     var body: some View {
-        let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
-        NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
-            ImageURLRounded(url: url, contentMode: .fit)
+        GeometryReader { geometry in
+            VStack {
+                let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
+                NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
+                    ImageURLRounded(url: url, contentMode: .fit)
+                        .frame(width: geometry.size.width * 0.5)
+                        .clipped()
+                }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+
         }
     }
 

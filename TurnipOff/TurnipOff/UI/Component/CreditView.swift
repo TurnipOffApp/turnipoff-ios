@@ -19,12 +19,12 @@ struct CreditView: View {
         VStack(alignment: .center) {
             NavigationLink(destination: self.destination) {
                 ImageURLRounded(
-                    url: PictureSizes.poster(.w185).builURL(for: credit.imagePath),
-                    contentMode: .fill
+                    url: PictureSizes.poster(.w342).builURL(for: credit.imagePath),
+                    contentMode: .fit
                 )
             }
-            .padding()
             .frame(width: 80, height: 100)
+            .clipped()
 
             Text(credit.title)
                 .font(.subheadline)
