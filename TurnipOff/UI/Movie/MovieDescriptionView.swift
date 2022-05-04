@@ -16,10 +16,6 @@ struct MovieDescriptionView: View {
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter
     }()
-    static var listFormatter: ListFormatter = {
-        let listFormatter = ListFormatter()
-        return listFormatter
-    }()
     static var dateComponentsFormatter: DateComponentsFormatter = {
         let dateComponentsFormatter = DateComponentsFormatter()
         dateComponentsFormatter.unitsStyle = .brief
@@ -49,7 +45,7 @@ struct MovieDescriptionView: View {
                 Text(movie.title)
                     .font(.title2)
                 Group {
-                    Text(movie.genres.map(\.name), format: .list(type: .and))
+                    Text(ListFormatter.localizedString(byJoining: movie.genres.map(\.name)))
                     Text(movie.release, formatter: Self.dateFormatter)
                 }
                 .font(.subheadline)
