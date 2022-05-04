@@ -1,0 +1,6 @@
+scheme("TurnipOff")
+configuration("Release")
+clean(true)
+output_directory("./build")
+output_name("TurnipOff")
+export_method("ad-hoc")
