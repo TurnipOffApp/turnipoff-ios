@@ -72,14 +72,6 @@ extension TMDBService: Service {
 
 }
 
-extension TMDBService: CachePolicyService {
-
-    var cachePolicy: URLRequest.CachePolicy? {
-        .reloadIgnoringLocalCacheData
-    }
-
-}
-
 fileprivate extension TMDBService {
 
     static let API_KEY = "7aeaa9d72de6df534afb8b71ac7d82eb"

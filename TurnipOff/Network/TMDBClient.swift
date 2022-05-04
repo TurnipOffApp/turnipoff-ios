@@ -17,7 +17,9 @@ final class TMDBClient {
     private let provider: ServiceProvider<TMDBService>
 
     private init() {
-        provider = .init(plugins: [CachePolicyPlugin()])
+        provider = .init(
+            urlSession: .shared
+        )
     }
 
 }

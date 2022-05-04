@@ -11,14 +11,11 @@ import Combine
 class ServiceProvider<T: Service> {
 
     private let urlSession: URLSession
-    private let plugins: [Plugin]
 
     init(
-        urlSession: URLSession = .shared,
-        plugins: [Plugin] = []
+        urlSession: URLSession
     ) {
         self.urlSession = urlSession
-        self.plugins = plugins
     }
 
 }
@@ -31,9 +28,7 @@ extension ServiceProvider {
             return .fail(NetworkError.invalidRequest)
         }
 
-        let preparedRequest = plugins.reduce(networkRequest) { $1.prepare($0, service: service) }
-
-        return urlSession.dataTaskPublisher(for: preparedRequest)
+        return urlSession.dataTaskPublisher(for: networkRequest)
             .mapError { _ in NetworkError.invalidRequest }
             .flatMap { data, response -> AnyPublisher<Data, Error> in
                 guard let response = response as? HTTPURLResponse else {
