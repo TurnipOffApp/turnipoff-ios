@@ -91,7 +91,7 @@ fileprivate extension TMDBService {
     static let defaultParams: [URLQueryItem] = [
         .init(name: "api_key", value: Self.API_KEY),
         .init(name: "language", value: Locale.autoupdatingCurrent.languageCode),
-        .init(name: "region", value: Locale.autoupdatingCurrent.regionCode),
+        .init(name: "region", value: "US"),
         .init(name: "adult", value: "false")
     ]
 
