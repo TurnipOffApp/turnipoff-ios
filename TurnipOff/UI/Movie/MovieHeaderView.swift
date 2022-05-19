@@ -12,20 +12,14 @@ struct MovieHeaderView: View {
     let movie: Movie
 
     var body: some View {
-        ZStack {
-            ImageURL(
-                url: PictureSizes.backdrop(.w780).builURL(for: movie.backdropPath),
-                contentMode: .fill
-            )
-            .blur(radius: 5)
-
+        HStack() {
+            Spacer()
             MoviePosterImage(
                 PictureSizes.poster(.w185).builURL(for: movie.posterPath)
             )
-            .cornerRadius(10)
-            .padding()
-
+            Spacer()
         }
+        .padding()
     }
 
 }
