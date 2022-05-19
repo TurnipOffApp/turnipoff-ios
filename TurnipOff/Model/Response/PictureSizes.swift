@@ -16,7 +16,7 @@ enum PictureSizes {
 
     enum Backdrop: String {
         case w300 = "w300"
-        case w700 = "w780"
+        case w780 = "w780"
         case w1080 = "w1280"
         case original = "original"
     }

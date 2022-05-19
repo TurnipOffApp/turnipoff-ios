@@ -27,7 +27,7 @@ struct TrendingMovieView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
+                let url = PictureSizes.poster(.w185).builURL(for: movie.posterPath)
                 NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
                     MoviePosterImage(url)
                         .frame(width: geometry.size.width * 0.5)

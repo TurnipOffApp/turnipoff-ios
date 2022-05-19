@@ -19,7 +19,7 @@ struct SectionView: View {
             ScrollView(.horizontal) {
                 LazyHStack {
                     ForEach(viewModel.movies) { movie in
-                        let url = PictureSizes.poster(.w342).builURL(for: movie.posterPath)
+                        let url = PictureSizes.poster(.w185).builURL(for: movie.posterPath)
                         NavigationLink(destination: MovieView(viewModel: .init(id: movie.id))) {
                             MoviePosterImage(url)
                                 .padding()

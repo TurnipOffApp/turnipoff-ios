@@ -19,7 +19,7 @@ struct CreditView: View {
         VStack(alignment: .center) {
             NavigationLink(destination: self.destination) {
                 MoviePosterImage(
-                    PictureSizes.poster(.w342).builURL(for: credit.imagePath)
+                    PictureSizes.poster(.w185).builURL(for: credit.imagePath)
                 )
             }
 
